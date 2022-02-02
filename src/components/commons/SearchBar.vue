@@ -1,8 +1,8 @@
 <template>
   <div>
-    <form action="/action_page.php">
-        <input type="text" id="fname" name="fname">
-        <button>Submit</button>
+    <form>
+        <input type="text" v-model="inputText"  @keyup="$emit('filter',inputText)" >
+        <button @click.prevent="$emit('filter',inputText)">Submit</button>
     </form>
     
   </div>
@@ -13,6 +13,11 @@
 
 export default {
   name: 'SearchBar',
+  data() {
+    return {
+      inputText: ""
+    }
+  },
   components: {
      
   },
