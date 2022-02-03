@@ -6,12 +6,11 @@
        v-for="(element, index) in  filteredInfo" 
        :key="index"
        :info="element"
-       
        />
        <InfoMovie
-       v-for="(element, index) in  filteredInfoTv" 
-       :key="index"
-       :info="element"
+       v-for="(ele, i) in  filteredInfoTv" 
+       :key="i"
+       :info="ele"
        />
     
   </main>
@@ -76,8 +75,8 @@ export default {
         }
       })
       .then((response) => {
-        this.filteredInfoTV = response.data.results;
-        console.log( this.filteredInfoTV, 'tv')
+        this.filteredInfoTv = response.data.results;
+        console.log( this.filteredInfoTv, 'tv')
         
       })
       .catch(function (error) {

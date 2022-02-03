@@ -2,6 +2,8 @@
   <ul class="container">
     <li>{{info.title}}</li>
     <li>{{info.original_title}}</li>
+    <li>{{info.name}}</li>
+    <li>{{info.original_name}}</li>
     <li class="language-container">
       <img v-if="info.original_language==='en'" src="../../assets/img/en.png">
       <img v-else-if="info.original_language==='es'" src="../../assets/img/es.png">
