@@ -9,7 +9,7 @@
        />
        <InfoMovie
        v-for="(ele, i) in  filteredInfoTv" 
-       :key="i"
+       :key="i+'Tv'"
        :info="ele"
        />
     
