@@ -2,7 +2,10 @@
   <ul class="container">
     <li>{{info.title}}</li>
     <li>{{info.original_title}}</li>
-    <li>{{info.original_language}}</li>
+    <li class="language-container"><img v-if="info.original_language==='en'" src="../../assets/img/en.png">
+    <img v-if="info.original_language==='es'" src="../../assets/img/es.png">
+    <img v-if="info.original_language==='it'" src="../../assets/img/it.png">
+    </li>
     <li>{{info.vote_average}}</li>
     
   </ul>
@@ -15,6 +18,9 @@ export default {
   name: 'InfoMovie',
    props: {
         info: Object
+    },
+    methods: {
+      
     }
 }
 </script>
@@ -23,7 +29,14 @@ export default {
 .container{
   height: 300px;
   width: 100%;
-  background-color: blue;
+  .language-container{
+    height: 20px;
+    width: 20px;
+    img{
+      height: 100%;
+    }
+  }
+  
 }
 
 </style>

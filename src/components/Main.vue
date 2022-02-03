@@ -25,7 +25,7 @@ export default {
 
   data(){
       return{
-        apiURL:"https://api.themoviedb.org/3/search/movie",
+        
           filteredInfo:[],
           inputText:'*'
       }
@@ -42,7 +42,7 @@ export default {
             
     },
       getInfo: function(){
-        axios.get(this.apiURL, {
+        axios.get('https://api.themoviedb.org/3/search/movie', {
         params: {
             api_key: '5f763b82935ccf722598ab22ec49212e',
             query: this.inputText
@@ -60,6 +60,7 @@ export default {
       }
 
   }
+  
 }
 </script>
 

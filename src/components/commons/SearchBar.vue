@@ -1,7 +1,7 @@
 <template>
   <div>
     <form>
-        <input type="text" v-model="inputText"  @keyup="$emit('filter',inputText)" >
+        <input type="text" v-model="inputText" >
         <button @click.prevent="$emit('filter',inputText)">Submit</button>
     </form>
     
