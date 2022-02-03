@@ -1,5 +1,8 @@
 <template>
   <ul class="container">
+    <li class="poster">
+      <img class="posterCover" :src="'https://image.tmdb.org/t/p/w500/'+info.poster_path" alt="">
+    </li>
     <li>{{info.title}}</li>
     <li>{{info.original_title}}</li>
     <li>{{info.name}}</li>
@@ -32,18 +35,26 @@ export default {
 
 <style lang="scss">
 .container{
-  height: 100px;
-  width: 100%;
+  height: 300px;
+  width: 200px;
   .language-container{
     height: 20px;
     width: 20px;
     img{
       height: 100%;
+      object-fit: cover;
     }
   }  
 }
 ul{
   list-style: none;
+}
+.poster{
+  
+  height: 200px;
+  .posterCover{
+    height: 100%;
+  }
 }
 
 </style>
