@@ -2,9 +2,12 @@
   <ul class="container">
     <li>{{info.title}}</li>
     <li>{{info.original_title}}</li>
-    <li class="language-container"><img v-if="info.original_language==='en'" src="../../assets/img/en.png">
-    <img v-if="info.original_language==='es'" src="../../assets/img/es.png">
-    <img v-if="info.original_language==='it'" src="../../assets/img/it.png">
+    <li class="language-container">
+      <img v-if="info.original_language==='en'" src="../../assets/img/en.png">
+      <img v-else-if="info.original_language==='es'" src="../../assets/img/es.png">
+      <img v-else-if="info.original_language==='it'" src="../../assets/img/it.png">
+      <span v-else>{{info.original_language}}</span>
+      
     </li>
     <li>{{info.vote_average}}</li>
     
@@ -27,7 +30,7 @@ export default {
 
 <style lang="scss">
 .container{
-  height: 300px;
+  height: 100px;
   width: 100%;
   .language-container{
     height: 20px;
@@ -35,8 +38,10 @@ export default {
     img{
       height: 100%;
     }
-  }
-  
+  }  
+}
+ul{
+  list-style: none;
 }
 
 </style>
