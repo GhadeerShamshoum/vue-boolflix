@@ -43,14 +43,15 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  
   h1{
     color:white
   }
   .container{
-    width: 1100px;
+    width: 1200px;
     display: flex;
     flex-wrap: wrap;
+    background-color: #141414;
   }
 }
 

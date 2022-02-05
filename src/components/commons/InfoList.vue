@@ -2,23 +2,25 @@
   <div class="container-card">
     <div class="poster">
       <img class="posterCover" :src="'https://image.tmdb.org/t/p/w342/'+info.poster_path" alt="">
-      <ul class="containerList">
-        <li>Title:{{info.title}}</li>
-        <li>Title original:{{info.original_title}}</li>
-        <li>Title{{info.name}}</li>
-        <li>Title original:{{info.original_name}}</li>
-        <li class="language-container">
-          <img v-if="info.original_language==='en'" src="../../assets/img/en.png">
-          <img v-else-if="info.original_language==='es'" src="../../assets/img/es.png">
-          <img v-else-if="info.original_language==='it'" src="../../assets/img/it.png">
-          <span v-else>{{info.original_language}}</span>  
-        </li>
-        <li class="vote">
-          <span class="starsOuter">
-              <span class="starContainer" ><i v-for="(element, index) in getRating(info.vote_average)" :key="index" class="starsInner fas fa-star"></i></span> 
-          </span>
-        </li>  
-      </ul>
+      <div class="containerList">
+        <ul>
+          <li>Title:{{info.title}}</li>
+          <li>Title original:{{info.original_title}}</li>
+          <li>Title{{info.name}}</li>
+          <li>Title original:{{info.original_name}}</li>
+          <li class="language-container">
+            <img v-if="info.original_language==='en'" src="../../assets/img/en.png">
+            <img v-else-if="info.original_language==='es'" src="../../assets/img/es.png">
+            <img v-else-if="info.original_language==='it'" src="../../assets/img/it.png">
+            <span v-else>{{info.original_language}}</span>  
+          </li>
+          <li class="vote">
+            <span class="starsOuter">
+                <span class="starContainer" ><i v-for="(element, index) in getRating(info.vote_average)" :key="index" class="starsInner fas fa-star"></i></span> 
+            </span>
+          </li>  
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -54,35 +56,41 @@ export default {
 .container-card{
   display: flex;
   width: calc(100% / 6 - 10px);
-  margin: 5px;
+  margin:10px 5px;
   .poster{
     position: relative;
     height: 200px;
     .posterCover{
       height: 100%;
     }
-  }
-.containerList{
-  height: 300px;
-  width: 100%;
-  position: absolute;
-  top:0;
-  left: 0;
-  .language-container{
-    height: 20px;
-    width: 20px;
-    img{
-      height: 100%;
-      object-fit: cover;
+    &:hover .containerList{
+      display: block;
     }
-  }  
+  .containerList{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.411);
+      ul{
+        padding: 0;
+        list-style: none;
+        color: $colorWhite;
+        .language-container{
+          height: 20px;
+          width: 20px;
+          img{
+            height: 100%;
+            object-fit: cover;
+          }
+        }  
+      }
+    }
+  }
 }
-}
-ul{
-  list-style: none;
-  color: $colorWhite;
-  padding: 0;
-}
+
 .starsOuter{
   position: relative;
   display:inline-block;
