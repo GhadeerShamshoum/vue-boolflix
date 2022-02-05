@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cntainerSearchBar">
     <form>
         <input type="text" v-model="inputText" >
         <button @click.prevent="$emit('filter',inputText)">Submit</button>
@@ -26,5 +26,8 @@ export default {
 </script>
 
 <style lang="scss">
+.cntainerSearchBar{
+  line-height: 67px;
+}
 
 </style>

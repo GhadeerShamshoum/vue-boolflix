@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>{{title}}</h1>
-      
+    <div class="container"> 
       <InfoList
        v-for="(element, index) in  listFilm" 
        :key="index"
@@ -12,6 +12,7 @@
        :key="index+'TV'"
        :info="element"
        />
+    </div> 
       
     
   </main>
@@ -36,6 +37,21 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+main{
+  background-color: #141414;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  h1{
+    color:white
+  }
+  .container{
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 
 </style>

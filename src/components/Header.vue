@@ -1,7 +1,9 @@
 <template>
   <header>
-      <SearchBar 
-      @filter="PassChoice"/>
+    <Logo/>
+    <Menu/>
+    <SearchBar 
+    @filter="PassChoice"/>
       
   </header>
 </template>
@@ -9,13 +11,17 @@
 <script>
 
 import SearchBar from "./commons/SearchBar.vue";
+import Menu from "./commons/Menu.vue";
+import Logo from "./commons/Logo.vue";
 
 
 export default {
   name: 'Header',
   
   components: {
-  SearchBar 
+  Logo, 
+  Menu,
+  SearchBar
   },
   methods:{
 
@@ -27,5 +33,13 @@ export default {
 </script>
 
 <style lang="scss">
+header{
+  height: 67px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #010606;
+}
 
 </style>
