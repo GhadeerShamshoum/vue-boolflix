@@ -15,9 +15,7 @@
     </li>
     <li class="vote">
       <span class="starsOuter">
-        <span >
           <span class="starContainer" ><i v-for="(element, index) in getRating(info.vote_average)" :key="index" class="starsInner fas fa-star"></i></span> 
-        </span>
       </span>
     </li>
     
@@ -28,7 +26,7 @@
 
 
 export default {
-  name: 'InfoMovie',
+  name: 'InfoList',
   data(){
     return{
       
