@@ -56,10 +56,12 @@ export default {
 .container-card{
   display: flex;
   width: calc(100% / 6 - 10px);
+  height: 296px;
   margin:10px 5px;
+  overflow: hidden;
   .poster{
     position: relative;
-    height: 200px;
+    height: 100%;
     .posterCover{
       height: 100%;
     }
@@ -78,6 +80,9 @@ export default {
         padding: 0;
         list-style: none;
         color: $colorWhite;
+        li{
+          padding: 3px 2px;
+        }
         .language-container{
           height: 20px;
           width: 20px;

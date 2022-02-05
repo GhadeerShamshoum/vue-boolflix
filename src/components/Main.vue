@@ -1,7 +1,7 @@
 <template>
   <main>
-    <h1>{{title}}</h1>
     <div class="container"> 
+      <h1>{{title}}</h1>
       <InfoList
        v-for="(element, index) in  listFilm" 
        :key="index"
@@ -45,13 +45,14 @@ main{
   align-items: center;
   
   h1{
-    color:white
+    color: white;
+    width: 100%;
+
   }
   .container{
     width: 1200px;
     display: flex;
     flex-wrap: wrap;
-    background-color: #141414;
   }
 }
 
