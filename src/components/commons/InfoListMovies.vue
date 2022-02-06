@@ -3,11 +3,10 @@
     <div class="poster">
       <img class="posterCover" :src="'https://image.tmdb.org/t/p/w342/'+info.poster_path" alt="">
       <div class="containerList">
+        <!-- movies list -->
         <ul>
           <li>Title:{{info.title}}</li>
-          <li>Title original:{{info.original_title}}</li>
-          <li>Title{{info.name}}</li>
-          <li>Title original:{{info.original_name}}</li>
+          <li v-if="info.title!=info.original_title">Title original:{{info.original_title}}</li>
           <li class="language-container">
             <img v-if="info.original_language==='en'" src="../../assets/img/en.png">
             <img v-else-if="info.original_language==='es'" src="../../assets/img/es.png">
@@ -29,7 +28,7 @@
 
 
 export default {
-  name: 'InfoList',
+  name: 'InfoListMovies',
   data(){
     return{
       

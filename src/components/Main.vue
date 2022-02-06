@@ -1,13 +1,13 @@
 <template>
   <main>
     <div class="container"> 
-      <h1>{{title}}</h1>
-      <InfoList
+      <h2>{{title}}</h2>
+      <InfoListMovies
        v-for="(element, index) in  listFilm" 
        :key="index"
        :info="element"
        />
-      <InfoList
+      <InfoListSerieTV
        v-for="(element, index) in  listSerie" 
        :key="index+'TV'"
        :info="element"
@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import InfoList from "./commons/InfoList.vue";
+import InfoListMovies from "./commons/InfoListMovies.vue";
+import InfoListSerieTV from "./commons/InfoListSerieTV.vue";
 
 export default {
   name: 'Main',
@@ -31,7 +32,8 @@ export default {
   
   components: {
 
-  InfoList
+  InfoListMovies,
+  InfoListSerieTV
   },
   
 }
@@ -44,7 +46,7 @@ main{
   flex-direction: column;
   align-items: center;
   
-  h1{
+  h2{
     color: white;
     width: 100%;
 

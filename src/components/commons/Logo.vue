@@ -1,6 +1,6 @@
 <template>
     <div class="logoContainer">
-        <img src="../../assets/img/Boolflex.png" alt="">
+        <img src="../../assets/img/Boolflix.png" alt="">
     </div>
  
 </template>

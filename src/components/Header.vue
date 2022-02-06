@@ -1,7 +1,9 @@
 <template>
   <header>
-    <Logo/>
-    <Menu/>
+    <div class="headerLeft">
+      <Logo/>
+      <Menu/>
+    </div>
     <SearchBar 
     @filter="PassChoice"/>
       
@@ -40,6 +42,10 @@ header{
   justify-content: space-between;
   align-items: center;
   background-color: #010606;
+  .headerLeft{
+    display: flex;
+    align-items: center;
+  }
 }
 
 </style>
