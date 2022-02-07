@@ -1,7 +1,7 @@
 <template>
   <div class="container-card">
     <div class="poster">
-      <img class="posterCover" :src="'https://image.tmdb.org/t/p/w342/'+info.poster_path" alt="">
+      <img class="posterCover" :src="(info.poster_path==null)?require('../../assets/img/aaa.jpg'):'https://image.tmdb.org/t/p/w342/'+info.poster_path" alt="">
       <div class="containerList">
         <!-- movies list -->
         <ul>

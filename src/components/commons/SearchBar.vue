@@ -1,7 +1,7 @@
 <template>
   <div class="cntainerSearchBar">
     <form>
-        <input type="text" v-model="inputText" >
+        <input type="text" v-model.trim="inputText" >
         <button @click.prevent="$emit('filter',inputText)">Submit</button>
     </form>
     

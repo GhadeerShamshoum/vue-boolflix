@@ -76,6 +76,10 @@ export default {
       .then((response) => {
         this.filteredInfoFilm = response.data.results;
         console.log( this.filteredInfoFilm, 'movie')
+        if(this.filteredInfoFilm==0){
+          alert("No results containing all your search terms were found")
+
+        }
         
       })
       .catch(function (error) {

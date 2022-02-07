@@ -1,12 +1,9 @@
 <template>
     <nav>
         <ul class="menu">
-            <li>Home</li>
-            <li>Serie TV</li>
-            <li>Film</li>
-            <li>Original</li>
-            <li>Aggiunti di recente</li>
-            <li>La mia lista</li>
+            <li v-for="(element, index) in links" :key="index">
+                <a :class='{active: element.current==true}' href="#">{{element.text}}</a>
+            </li>
         </ul>
         
     </nav>
@@ -18,6 +15,43 @@
 
 export default {
   name: 'Menu',
+  data(){
+      return{
+          links:[
+              {
+                text:"Home",
+                url:"#",
+                current:true
+              },
+              {
+                text:"Serie TV",
+                url:"#",
+                current:false
+              },
+              {
+                text:"Film",
+                url:"#",
+                current:false
+              },
+              {
+                text:"Original",
+                url:"#",
+                current:false
+              },
+              {
+                text:"Aggiunti di recente",
+                url:"#",
+                current:false
+              },
+              {
+                text:"La mia lista",
+                url:"#",
+                current:false
+              }
+              
+          ]
+      }
+  }
   
 }
 
@@ -28,11 +62,18 @@ export default {
     list-style: none;
     display: flex;
     margin: 0 50px;
-    li{
+    a{
         color: white;
-        padding: 0 5px;
+        padding: 0 10px;
         font-weight: 200;
+        &:hover{
+            font-weight: 500;
+        }
     }
+}
+
+.active{
+    font-weight: 500 !important;
 }
 
 </style>

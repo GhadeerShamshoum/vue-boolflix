@@ -2,7 +2,7 @@
   <div class="container-card">
     <!-- poster -->
     <div class="poster">
-      <img class="posterCover" :src="'https://image.tmdb.org/t/p/w342/'+info.poster_path" alt="">
+      <img class="posterCover" :src="(info.poster_path==null)?require('../../assets/img/aaa.jpg'):'https://image.tmdb.org/t/p/w342/'+info.poster_path" alt="">
       <div class="containerList">
         <!-- serie TV list -->
         <ul>

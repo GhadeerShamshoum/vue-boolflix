@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;500&display=swap');
-
+@import "./variabiles.scss";
 *{
     margin: 0;
     padding: 0;
@@ -10,5 +10,8 @@ body{
     font-family: 'Oswald', sans-serif;
     height: 100vh;
     background-color:#141414;
-  
+}
+a{
+    text-decoration: none;
+    color: $colorWhite;
 }
