@@ -2,7 +2,7 @@
   <div id="app">
     <Header @passTOApp="filterData"/>
     <Main :listFilm="filteredInfoFilm" :listSerie="filteredInfoTv" 
-    title="Your search results"/>
+    title="Your search results" :status="notFound"/>
     
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   name: 'App',
   data(){
       return{
-        
+          notFound: false,
           filteredInfoFilm:[],
           filteredInfoTv:[],
           inputText:'*'
@@ -27,36 +27,47 @@ export default {
     Main
   },
   computed: {
+    // noResults(){
+    //   if(this.notFound===false){
+    //             this.notFound=true;
+    //             console.log(this.notFound)
+    //         }else 
+    //         if(this.notFound===true){
+    //             this.notFound=false;
+    //             console.log(this.notFound);
+    //         }
 
-    // arrayFilm(){
-    //   const arrayObjMod = [];
-    //   this. filteredInfoFilm.forEach((elem) => {
-    //     const objApp = {
-    //       title: elem.title,
-    //       title_original: elem.original_title,
-    //       language: elem.original_language,
-    //       voto: elem.vote_average
-    //     };
-    //     arrayObjMod.push(objApp);
-    //   });
-    //   return arrayObjMod;
     // },
-    // arraySerie(){
-    //   const arrayObjMod = [];
-    //   this.filteredInfoTv.forEach((elem) => {
-    //     const objApp = {
-    //       title: elem.name,
-    //       name_original: elem.original_name,
-    //       language: elem.original_language,
-    //       voto: elem.vote_average
-    //     };
-    //     arrayObjMod.push(objApp);
-    //   });
-    //   return arrayObjMod;
-    // },
-    // arrayFilmsSerie() {
-    //     return [...this.arrayFilm, ...this.arraySerie];
-    // }
+
+    //  arrayFilm(){
+    //    const arrayObjMod = [];
+    //    this. filteredInfoFilm.forEach((elem) => {
+    //      const objApp = {
+    //        title: elem.title,
+    //        title_original: elem.original_title,
+    //        language: elem.original_language,
+    //        voto: elem.vote_average
+    //      };
+    //      arrayObjMod.push(objApp);
+    //    });
+    //    return arrayObjMod;
+    //  },
+    //  arraySerie(){
+    //    const arrayObjMod = [];
+    //    this.filteredInfoTv.forEach((elem) => {
+    //      const objApp = {
+    //        title: elem.name,
+    //        name_original: elem.original_name,
+    //        language: elem.original_language,
+    //        voto: elem.vote_average
+    //      };
+    //      arrayObjMod.push(objApp);
+    //    });
+    //    return arrayObjMod;
+    //  },
+    //  arrayFilmsSerie() {
+    //      return [...this.arrayFilm, ...this.arraySerie];
+    //  }
   },
 
   methods: {
@@ -77,7 +88,9 @@ export default {
         this.filteredInfoFilm = response.data.results;
         console.log( this.filteredInfoFilm, 'movie')
         if(this.filteredInfoFilm==0){
-          alert("No results containing all your search terms were found")
+          this.notFound=true;
+        }else{
+           this.notFound=false;
 
         }
         

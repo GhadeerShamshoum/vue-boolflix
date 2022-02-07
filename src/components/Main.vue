@@ -2,6 +2,7 @@
   <main>
     <div class="container"> 
       <h2>{{title}}</h2>
+      <h3 v-if="status==true">No results containing all your search terms were found</h3>
       <InfoListMovies
        v-for="(element, index) in  listFilm" 
        :key="index"
@@ -27,7 +28,8 @@ export default {
   props: {
         listFilm: Array,
         listSerie: Array,
-        title: String
+        title: String,
+        status: Boolean
     },
   
   components: {
@@ -47,7 +49,8 @@ main{
   align-items: center;
   margin: 60px 0;
   
-  h2{
+  h2,
+  h3{
     color: white;
     width: 100%;
 
